@@ -8,7 +8,7 @@
     include 'fetch_emp.php';
     include 'search.php';
     if(!isset($_POST["title"])){
-      echo "please select an option";
+      echo "<br>please select an option";
       die();
     }
     echo "<br>";
