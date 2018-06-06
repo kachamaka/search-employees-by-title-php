@@ -5,7 +5,6 @@
 </head>
 <body>
 <?php
-include 'fetch_emp.php';
 include 'search.php';
 ?>
 </body>

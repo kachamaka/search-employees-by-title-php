@@ -1,14 +1,5 @@
 <?php
-$allTitles = array();
-foreach($employees as $emp){
-  array_push($allTitles, $emp[4]);
-}
-$titles = array();
-foreach($allTitles as $singleTitle){
-  if(!in_array($singleTitle, $titles)){
-    array_push($titles, $singleTitle);
-  }
-}
+include 'titles.php';
 echo '
 <form action="res.php" method="post">
 <h2>Search employees by title</h2>
@@ -23,4 +14,5 @@ echo "<option selected disabled hidden>Choose title</option>";
    }
  }
 echo '</select>';
+echo '</form>';
 ?>
