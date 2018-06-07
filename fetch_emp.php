@@ -1,15 +1,6 @@
 <?php
- $host        = "host = localhost";
- $port        = "port = 5432";
- $dbname      = "dbname = postgres";
- $credentials = "user = postgres password=postgres";
-
-   $db = pg_connect( "$host $port $dbname $credentials"  );
-   if(!$db) {
-      echo "Error : Unable to open database\n";
-      die();
-   }
-   if(isset($_POST["title"])){
+  include($_SERVER['DOCUMENT_ROOT']."/php/db/db.php");
+  if(isset($_POST["title"])){
    $selectedTitle = $_POST["title"];     
     $sql = "select * from employees where title = '$selectedTitle' ";   
     $ret = pg_query($db, $sql);

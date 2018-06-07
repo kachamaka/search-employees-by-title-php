@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <?php
-    include 'search.php';
-    include 'fetch_emp.php';    
+    include($_SERVER['DOCUMENT_ROOT']."/php/search/search.php");
+    include($_SERVER['DOCUMENT_ROOT']."/php/fetch_emp.php");    
     if(!isset($_POST["title"])){
       echo "<br>please select an option";
       die();
     }
-    echo "<br>";
-    echo "<table>";
-    echo "<th>Name</th>";
-    echo "<th>Family name</th>";
-    echo "<th>Birth year</th>";
-    echo "<th>Monthly salary</th>";
+  ?>
+    <br>
+    <table>
+    <th>Name</th>
+    <th>Family name</th>
+    <th>Birth year</th>
+    <th>Monthly salary</th>
+    <?php
     foreach($employees as $emp){
       if($emp[4] == $_POST["title"]){  
         echo "<tr>";
@@ -27,8 +29,8 @@
         echo "</tr>"; 
       }
     }
-    echo "</table>"; 
-    pg_close($db);
-  ?>
+    pg_close($db);    
+    ?>    
+    </table> 
 </body>
 </html>

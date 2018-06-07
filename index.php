@@ -5,7 +5,7 @@
 </head>
 <body>
 <?php
-include 'search.php';
+include($_SERVER['DOCUMENT_ROOT']."/php/search/search.php");
 ?>
 </body>
 </html>
